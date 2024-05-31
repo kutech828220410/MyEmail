@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmailSender.cs" />
     <Compile Include="MyEmail_Send_UI.cs">
       <SubType>UserControl</SubType>
     </Compile>
