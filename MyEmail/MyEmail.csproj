@@ -56,6 +56,10 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>bin\Release\Microsoft.Office.Interop.Word.dll</HintPath>
     </Reference>
+    <Reference Include="MyEmail, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\0.DLL\MyEmail.dll</HintPath>
+    </Reference>
     <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>

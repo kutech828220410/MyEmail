@@ -19,7 +19,7 @@ namespace MyEmail
             this.smtpPass = smtpPass;
         }
 
-        public void SendEmail(List<string> recipients, string subject, string body, string attachmentPath = null)
+        public void SendEmail(List<string> recipients, string subject, string body, bool EnableSsl, string attachmentPath = null)
         {
             using (MailMessage mail = new MailMessage())
             {
@@ -42,7 +42,8 @@ namespace MyEmail
                 using (SmtpClient smtp = new SmtpClient(smtpServer, smtpPort))
                 {
                     smtp.Credentials = new NetworkCredential(smtpUser, smtpPass);
-                    smtp.EnableSsl = true; // 如果你的SMTP服务器使用SSL则设置为true
+                    smtp.EnableSsl = EnableSsl; // 如果你的SMTP服务器使用SSL则设置为true
+                    smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
                     smtp.Send(mail);
                 }
             }
