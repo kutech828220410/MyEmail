@@ -19,7 +19,7 @@ namespace MyEmail
             this.smtpPass = smtpPass;
         }
 
-        public void SendEmail(List<string> recipients, string subject, string body, bool EnableSsl, string attachmentPath = null)
+        public void SendEmail(List<string> recipients, List<string> cc, string subject, string body, bool EnableSsl, string attachmentPath = null)
         {
             using (MailMessage mail = new MailMessage())
             {
@@ -27,6 +27,10 @@ namespace MyEmail
                 foreach (string recipient in recipients)
                 {
                     mail.To.Add(recipient);
+                }
+                foreach (string recipient in cc)
+                {
+                    mail.CC.Add(recipient);
                 }
                 mail.Subject = subject;
                 mail.Body = body;
